@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     elevation: 2,
     shadowOpacity: 0.26,
-    borderWidth: 0,
     shadowRadius: getScaleNumber(3),
     shadowOffset: {
       width: getScaleNumber(1),

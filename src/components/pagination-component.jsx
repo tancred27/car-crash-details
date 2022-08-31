@@ -7,9 +7,9 @@ import { getScaleNumber } from "../utils/functions";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: getScaleNumber(10),
+    marginVertical: getScaleNumber(10),
     flexDirection: "row",
-    width: getScaleNumber(200),
+    width: getScaleNumber(150),
     alignItems: "center",
     justifyContent: "space-between",
   },

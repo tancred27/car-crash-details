@@ -10,6 +10,7 @@ import DatePicker from "../components/date-picker-component";
 import { baseUrl, cardDataMap, paginationLimit, tableHeaders } from "../config";
 import Table from "../components/table-component";
 import ToggleView from "../components/toggle-view-component";
+import Options from "../components/options-component";
 
 const styles = StyleSheet.create({
   container: {
@@ -78,9 +79,19 @@ const ListScreen = ({ navigation }) => {
   return (
     <ScreenContainer>
       <View style={styles.container}>
-        <ToggleView showTable={showTable} displayTable={displayTable} />
+        {/* <ToggleView showTable={showTable} displayTable={displayTable} />
         <DatePicker value={date} onDateChange={onDateChange} clearDate={clearDate} />
-        <Pagination onPressLeft={moveBackward} onPressRight={moveForward} offset={offset} />
+        <Pagination onPressLeft={moveBackward} onPressRight={moveForward} offset={offset} /> */}
+        <Options
+          showTable={showTable}
+          displayTable={displayTable}
+          value={date}
+          onDateChange={onDateChange}
+          clearDate={clearDate}
+          onPressLeft={moveBackward}
+          onPressRight={moveForward}
+          offset={offset}
+        />
         {loading ? (
           <ActivityIndicator style={styles.loaderStyle} size="large" color="#3B9AE1" />
         ) : (

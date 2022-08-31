@@ -1,15 +1,15 @@
 import React from "react";
-import { StyleSheet } from "react-native";
-import { DataTable } from "react-native-paper";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Table, TableWrapper, Row, Cell } from "react-native-table-component";
+
 import { cardDataMap } from "../config";
-import { getScaleNumber } from "../utils/functions";
+import { getScaleNumber, SCREEN_WIDTH } from "../utils/functions";
 
 const styles = StyleSheet.create({
   container: {
-    padding: getScaleNumber(5),
-  },
-  tableHeader: {
-    backgroundColor: "#DCDCDC",
+    width: SCREEN_WIDTH - getScaleNumber(10),
+    padding: getScaleNumber(8),
+    marginVertical: getScaleNumber(16),
   },
   cell: {
     borderWidth: 1,
@@ -18,31 +18,63 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  headers: {
+    height: getScaleNumber(30),
+    backgroundColor: "#DCDCDC",
+  },
+  cells: {
+    height: getScaleNumber(30),
+  },
+  tableBorder: {
+    borderWidth: 1,
+    borderColor: "#DBDBDB",
+  },
+  text: {
+    textAlign: "center",
+  },
+  row: {
+    flexDirection: "row",
+  },
+  colContainer: {
+    backgroundColor: "white",
+    flexDirection: "row",
+    height: getScaleNumber(30),
+    padding: getScaleNumber(5),
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  colContent: {
+    textAlign: "center",
+  },
 });
 
-const Table = ({ navigation, data, headers }) => {
+const TableView = ({ navigation, data, headers }) => {
   const navigateToDetailScreen = (crashData) => {
     navigation.navigate({ name: "Details", params: { crashData } });
   };
 
+  const tableCell = (col, row) => (
+    <TouchableOpacity onPress={() => navigateToDetailScreen(row)}>
+      <View style={styles.colContainer}>
+        <Text style={styles.colContent}>{col.content}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+
   return (
-    <DataTable style={styles.container}>
-      <DataTable.Header style={styles.tableHeader}>
-        {headers.map((header, index) => (
-          <DataTable.Title key={index.toString()}>{header}</DataTable.Title>
+    <View style={styles.container}>
+      <Table borderStyle={styles.tableBorder}>
+        <Row data={headers} style={styles.headers} textStyle={styles.text} />
+        {data.map((row, index) => (
+          <TableWrapper key={index.toString()} style={styles.row}>
+            {cardDataMap(row).map((col, index) => (
+              <Cell key={index.toString()} data={tableCell(col, row)} textStyle={styles.text} />
+            ))}
+          </TableWrapper>
         ))}
-      </DataTable.Header>
-      {data.map((row, index) => (
-        <DataTable.Row key={index.toString()}>
-          {cardDataMap(row).map((col, index) => (
-            <DataTable.Cell centered onPress={() => navigateToDetailScreen(row)} key={index.toString()} style={styles.cell}>
-              {col.content}
-            </DataTable.Cell>
-          ))}
-        </DataTable.Row>
-      ))}
-    </DataTable>
+      </Table>
+    </View>
   );
 };
 
-export default Table;
+export default TableView;

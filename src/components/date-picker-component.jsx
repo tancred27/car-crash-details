@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 import { DatePickerModal } from "react-native-paper-dates";
-import { getFormattedDate, getScaleNumber } from "../utils/functions";
 import { AntDesign } from "@expo/vector-icons";
+
+import { getFormattedDate, getScaleNumber } from "../utils/functions";
 
 const styles = StyleSheet.create({
   container: {
@@ -10,7 +11,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
     width: getScaleNumber(250),
-    marginTop: getScaleNumber(10),
+    marginVertical: getScaleNumber(10),
   },
   iconStyle: {
     marginHorizontal: getScaleNumber(5),
@@ -44,7 +45,7 @@ const DatePicker = ({ value, onDateChange, clearDate }) => {
         <AntDesign style={styles.iconStyle} name="calendar" size={getScaleNumber(16)} color="#3B9AE1" />
       </TouchableOpacity>
       <DatePickerModal mode="single" locale="en" visible={open} date={value || new Date()} onConfirm={handleDateChange} onDismiss={() => setOpen(false)} />
-      <Button onPress={clearDate} title="Clear" />
+      <Button color="#3B9AE1" onPress={clearDate} title="Clear" />
     </View>
   );
 };
