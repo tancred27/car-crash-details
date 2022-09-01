@@ -8,7 +8,7 @@ import { getScaleNumber } from "../utils/functions";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: getScaleNumber(10),
+    marginVertical: getScaleNumber(10),
     paddingHorizontal: getScaleNumber(10),
     flexDirection: Platform.OS === "web" ? "row" : "column",
     width: Platform.OS === "web" ? "94vw" : "80%",

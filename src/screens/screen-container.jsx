@@ -1,6 +1,5 @@
 import * as React from "react";
 import { View, StyleSheet } from "react-native";
-import { getScaleNumber } from "../utils/functions";
 
 const styles = StyleSheet.create({
   container: {
