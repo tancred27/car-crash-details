@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   text: {
+    fontFamily: "Poppins",
     textAlign: 'center',
     color: "#3B9AE1",
   },
@@ -22,9 +23,9 @@ const styles = StyleSheet.create({
 const Pagination = ({ onPressLeft, onPressRight, offset }) => {
   return (
     <View style={styles.container}>
-      <AntDesign onPress={onPressLeft} name="stepbackward" size={getScaleNumber(16)} color="#3B9AE1" />
-      <Text style={styles.text}>{`${offset} - ${offset + paginationLimit}`} records</Text>
-      <AntDesign onPress={onPressRight} name="stepforward" size={getScaleNumber(16)} color="#3B9AE1" />
+      <AntDesign onPress={onPressLeft} name="leftcircle" size={getScaleNumber(18)} color="#3B9AE1" />
+      <Text style={styles.text}>{`${offset} - ${offset + paginationLimit}`} rows</Text>
+      <AntDesign onPress={onPressRight} name="rightcircle" size={getScaleNumber(18)} color="#3B9AE1" />
     </View>
   );
 };

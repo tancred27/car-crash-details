@@ -9,15 +9,9 @@ const styles = StyleSheet.create({
     minWidth: getScaleNumber(200),
     marginVertical: getScaleNumber(10),
     marginHorizontal: getScaleNumber(10),
-    borderRadius: getScaleNumber(5),
+    borderWidth: 1,
+    borderColor: "#DBDBDB",
     backgroundColor: "white",
-    elevation: 2,
-    shadowOpacity: 0.26,
-    shadowRadius: getScaleNumber(3),
-    shadowOffset: {
-      width: getScaleNumber(1),
-      height: getScaleNumber(2),
-    },
   },
 });
 

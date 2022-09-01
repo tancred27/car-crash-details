@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     borderColor: "#DBDBDB",
   },
   text: {
+    fontFamily: "PoppinsBold",
     textAlign: "center",
   },
   row: {
@@ -38,6 +39,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   colContent: {
+    fontFamily: "Poppins",
     textAlign: "center",
   },
 });

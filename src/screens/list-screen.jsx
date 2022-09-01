@@ -31,6 +31,9 @@ const styles = StyleSheet.create({
   tableContainerStyle: {
     width: Platform.OS === "web" ? "80vw" : SCREEN_WIDTH - getScaleNumber(10),
   },
+  text: {
+    fontFamily: "Poppins",
+  }
 });
 
 const ListScreen = ({ navigation }) => {
@@ -112,7 +115,7 @@ const ListScreen = ({ navigation }) => {
         ) : (
           <ScrollView fadingEdgeLength={5} contentContainerStyle={styles.cardsContainer}>
             {data.length === 0 ? (
-              <Text>No data found!</Text>
+              <Text style={styles.text}>No data found!</Text>
             ) : showTable ? (
               <Animated.View style={[animatedTableStyles, styles.tableContainerStyle]}>
                 <Table data={data} headers={tableHeaders} navigation={navigation} />

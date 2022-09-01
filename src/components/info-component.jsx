@@ -10,7 +10,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
   },
+  headerText: {
+    fontFamily: "Poppins",
+  },
   contentText: {
+    fontFamily: "Poppins",
     color: "#757575",
   },
 });
@@ -18,7 +22,7 @@ const styles = StyleSheet.create({
 const Info = ({ header, content }) => {
   return (
     <View style={styles.row}>
-      <Text>{header}</Text>
+      <Text style={styles.headerText}>{header}</Text>
       <Text style={styles.contentText}>{content}</Text>
     </View>
   );

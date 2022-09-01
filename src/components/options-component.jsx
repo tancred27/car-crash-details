@@ -11,23 +11,17 @@ const styles = StyleSheet.create({
     marginVertical: getScaleNumber(10),
     paddingHorizontal: getScaleNumber(10),
     flexDirection: Platform.OS === "web" ? "row" : "column",
-    width: Platform.OS === "web" ? "94vw" : "80%",
+    width: Platform.OS === "web" ? "99vw" : "80%",
     borderColor: "#DBDBDB",
     alignItems: "center",
     justifyContent: "space-around",
-    borderRadius: getScaleNumber(5),
+    borderWidth: 1,
     backgroundColor: 'white',
-    elevation: 2,
-    shadowOpacity: 0.26,
-    shadowRadius: getScaleNumber(3),
-    shadowOffset: {
-      width: getScaleNumber(1),
-      height: getScaleNumber(1),
-    },
   },
   innerContainer: {
     width: Platform.OS === "web" ? "40%" : "100%",
     flexDirection: "row",
+    justifyContent: 'space-evenly',
   },
 });
 

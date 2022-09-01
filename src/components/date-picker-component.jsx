@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, Text, StyleSheet, Button, TouchableOpacity, Platform } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Platform } from "react-native";
 import { DatePickerModal } from "react-native-paper-dates";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-evenly",
-    width: Platform.OS === "web" ? "40%" : "60%",
+    width: Platform.OS === "web" ? "40%" : "100%",
     marginVertical: getScaleNumber(10),
   },
   iconStyle: {
@@ -21,13 +21,28 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: getScaleNumber(5),
-    borderRadius: getScaleNumber(5),
     borderWidth: 1,
     borderColor: "#3B9AE1",
+    borderRadius: getScaleNumber(3),
   },
   text: {
-    color: "#3B9AE1",
+    fontFamily: "Poppins",
+    color: "lightgray",
   },
+  button: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: getScaleNumber(5),
+    paddingHorizontal: getScaleNumber(10),
+    backgroundColor: "#3B9AE1",
+    borderWidth: 1,
+    borderColor: "#3B9AE1",
+    borderRadius: getScaleNumber(3),
+  },
+  buttonText: {
+    color: 'white',
+  }
 });
 
 const DatePicker = ({ value, onDateChange, clearDate }) => {
@@ -45,7 +60,7 @@ const DatePicker = ({ value, onDateChange, clearDate }) => {
         <AntDesign style={styles.iconStyle} name="calendar" size={getScaleNumber(16)} color="#3B9AE1" />
       </TouchableOpacity>
       <DatePickerModal mode="single" locale="en" visible={open} date={value || new Date()} onConfirm={handleDateChange} onDismiss={() => setOpen(false)} />
-      <Button color="#3B9AE1" onPress={clearDate} title="Clear" />
+      <TouchableOpacity style={styles.button} onPress={clearDate}><Text style={[styles.text, styles.buttonText]}>Clear</Text></TouchableOpacity>
     </View>
   );
 };
