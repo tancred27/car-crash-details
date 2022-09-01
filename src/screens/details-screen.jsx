@@ -1,23 +1,28 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 import { detailsDataMap } from "../config";
 import ScreenContainer from "./screen-container";
 import Card from "../components/card-component";
-import { getScaleNumber, SCREEN_WIDTH } from "../utils/functions";
+import { getScaleNumber, SCREEN_HEIGHT, SCREEN_WIDTH } from "../utils/functions";
 
 const styles = StyleSheet.create({
+  screen: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   container: {
+    maxHeight: Platform.OS === "web" ? "80vh" : SCREEN_HEIGHT * (3/4),
     padding: getScaleNumber(10),
     backgroundColor: "white",
-    width: SCREEN_WIDTH - getScaleNumber(30),
+    width: Platform.OS === "web" ? "80vw" : SCREEN_WIDTH - getScaleNumber(30),
   },
 });
 
 const DetailsScreen = ({ route }) => {
   return (
-    <ScreenContainer>
-      <Card customStyle={styles.container} data={detailsDataMap(route.params.crashData)} disabled />
+    <ScreenContainer style={styles.screen}>
+      <Card customStyle={styles.container} data={detailsDataMap(route.params.crashData)} hasScrollView/>
     </ScreenContainer>
   );
 };

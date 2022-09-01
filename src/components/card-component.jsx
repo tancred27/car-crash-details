@@ -1,9 +1,12 @@
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 
 import Details from "./details-component";
 import { getScaleNumber } from "../utils/functions";
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    flex: 1,
+  },
   card: {
     padding: getScaleNumber(10),
     minWidth: getScaleNumber(200),
@@ -21,10 +24,17 @@ const styles = StyleSheet.create({
   },
 });
 
-const Card = ({ data, onPress, customStyle, disabled = false }) => {
+const Card = ({ data, onPress, customStyle, hasScrollView = false }) => {
   return (
-    <TouchableOpacity style={[styles.card, customStyle]} onPress={onPress} disabled={disabled}>
-      <Details data={data} />
+    <TouchableOpacity style={[styles.card, customStyle]} onPress={onPress} activeOpacity={1}>
+      {hasScrollView ? (
+        <ScrollView fadingEdgeLength={5} contentContainerStyle={styles.contentContainer}>
+          <Details data={data} />
+        </ScrollView>
+      ) : (
+        <Details data={data} />
+      )}
+      
     </TouchableOpacity>
   );
 };
