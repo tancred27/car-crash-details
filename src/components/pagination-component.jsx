@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   text: {
+    textAlign: 'center',
     color: "#3B9AE1",
   },
 });

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { detailsDataMap } from "../config";
 import ScreenContainer from "./screen-container";
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   container: {
     padding: getScaleNumber(10),
     backgroundColor: "white",
-    width: SCREEN_WIDTH - getScaleNumber(20),
+    width: SCREEN_WIDTH - getScaleNumber(30),
   },
 });
 

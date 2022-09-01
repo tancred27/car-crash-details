@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-evenly",
-    width: Platform.OS === "web" ? "30%" : "60%",
+    width: Platform.OS === "web" ? "40%" : "60%",
     marginVertical: getScaleNumber(10),
   },
   iconStyle: {
