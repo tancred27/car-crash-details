@@ -29,10 +29,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   colContainer: {
+    flexGrow: 1,
     backgroundColor: "white",
     flexDirection: "row",
-    height: getScaleNumber(30),
+    height: getScaleNumber(50),
     padding: getScaleNumber(5),
+    alignItems: 'center',
     justifyContent: "center",
   },
   colContent: {
