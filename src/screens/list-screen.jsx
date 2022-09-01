@@ -12,7 +12,6 @@ import { baseUrl, cardDataMap, paginationLimit, tableHeaders } from "../config";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
@@ -20,6 +19,7 @@ const styles = StyleSheet.create({
   cardsContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
+    padding: getScaleNumber(10),
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
@@ -93,8 +93,6 @@ const ListScreen = ({ navigation }) => {
     setShowTable(value);
   };
 
-  const renderCard = ({ item }) => <Card onPress={() => navigateToDetailScreen(item)} data={cardDataMap(item)} />
-
   return (
     <ScreenContainer>
       <View style={styles.container}>
@@ -120,13 +118,9 @@ const ListScreen = ({ navigation }) => {
               </Animated.View>
             ) : (
               <Animated.View style={[animatedListStyles, styles.cardsContainer]}>
-                <FlatList 
-                  data={data}
-                  renderItem={renderCard}
-                  keyExtractor={(_, index) => index.toString()}
-                  initialNumToRender={5}
-                  maxToRenderPerBatch={3}
-                />
+                {data.map((crashData, index) => (
+                  <Card onPress={() => navigateToDetailScreen(crashData)} key={index.toString()} data={cardDataMap(crashData)} />
+                ))}
               </Animated.View>
             )}
           </ScrollView>
