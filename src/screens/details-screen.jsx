@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   container: {
-    maxHeight: Platform.OS === "web" ? "80vh" : SCREEN_HEIGHT * (3/4),
+    maxHeight: Platform.OS === "web" ? "80vh" : SCREEN_HEIGHT * (2/3),
     padding: getScaleNumber(10),
     backgroundColor: "white",
     width: Platform.OS === "web" ? "80vw" : SCREEN_WIDTH - getScaleNumber(30),

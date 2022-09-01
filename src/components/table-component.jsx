@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: getScaleNumber(30),
     padding: getScaleNumber(5),
-    alignItems: "center",
     justifyContent: "center",
   },
   colContent: {
@@ -47,7 +46,7 @@ const TableView = ({ navigation, data, headers }) => {
   };
 
   const tableCell = (col, row) => (
-    <TouchableOpacity onPress={() => navigateToDetailScreen(row)}>
+    <TouchableOpacity onPress={() => navigateToDetailScreen(row)} style={{ overflow: "hidden" }}>
       <View style={styles.colContainer}>
         <Text style={styles.colContent}>{col.content}</Text>
       </View>
