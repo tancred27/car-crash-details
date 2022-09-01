@@ -4,9 +4,6 @@ import Details from "./details-component";
 import { getScaleNumber } from "../utils/functions";
 
 const styles = StyleSheet.create({
-  contentContainer: {
-    flex: 1,
-  },
   card: {
     padding: getScaleNumber(10),
     minWidth: getScaleNumber(200),
@@ -28,7 +25,7 @@ const Card = ({ data, onPress, customStyle, hasScrollView = false }) => {
   return (
     <TouchableOpacity style={[styles.card, customStyle]} onPress={onPress} activeOpacity={1}>
       {hasScrollView ? (
-        <ScrollView fadingEdgeLength={5} contentContainerStyle={styles.contentContainer}>
+        <ScrollView fadingEdgeLength={5}>
           <Details data={data} />
         </ScrollView>
       ) : (
