@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     marginTop: getScaleNumber(10),
     paddingHorizontal: getScaleNumber(10),
     flexDirection: Platform.OS === "web" ? "row" : "column",
-    width: "85%",
+    width: Platform.OS === "web" ? "80vw" : "80%",
     borderColor: "#DBDBDB",
     alignItems: "center",
     justifyContent: "space-between",
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     },
   },
   innerContainer: {
+    width: Platform.OS === "web" ? "30%" : "100%",
     flexDirection: "row",
   },
 });

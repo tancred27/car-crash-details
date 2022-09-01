@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Button, TouchableOpacity, Platform } from "react-native";
 import { DatePickerModal } from "react-native-paper-dates";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-evenly",
-    width: getScaleNumber(250),
+    width: Platform.OS === "web" ? "30%" : "60%",
     marginVertical: getScaleNumber(10),
   },
   iconStyle: {

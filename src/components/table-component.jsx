@@ -3,20 +3,13 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Table, TableWrapper, Row, Cell } from "react-native-table-component";
 
 import { cardDataMap } from "../config";
-import { getScaleNumber, SCREEN_WIDTH } from "../utils/functions";
+import { getScaleNumber } from "../utils/functions";
 
 const styles = StyleSheet.create({
   container: {
-    width: SCREEN_WIDTH - getScaleNumber(10),
+    width: "100%",
     padding: getScaleNumber(8),
     marginVertical: getScaleNumber(16),
-  },
-  cell: {
-    borderWidth: 1,
-    borderColor: "#DBDBDB",
-    flexGrow: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
   headers: {
     height: getScaleNumber(30),

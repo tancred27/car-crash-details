@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
     marginVertical: getScaleNumber(10),
-    minWidth: getScaleNumber(100),
+    width: Platform.OS === "web" ? "50%" : getScaleNumber(100),
   },
 });
 

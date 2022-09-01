@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   container: {
     marginVertical: getScaleNumber(10),
     flexDirection: "row",
-    width: getScaleNumber(150),
+    width: "50%",
     alignItems: "center",
     justifyContent: "space-between",
   },
