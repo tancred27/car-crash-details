@@ -1,11 +1,14 @@
 import { getFormattedDate, getFormattedTime } from "./utils/functions";
 
-const baseUrl = "https://data.cityofnewyork.us/resource/h9gi-nx95.json?";
+// api base url
+const baseUrl = "https://data.cityofnewyork.us/resource/h9gi-nx95.json";
 
 const paginationLimit = 5;
 
+// headers for table view
 const tableHeaders = ["Car 1", "Car 2", "Crash Date", "Crash Time"];
 
+// mapping api fields to custom headers for data in cards
 const cardDataMap = (data) => [
   {
     header: "Car 1: ",
@@ -25,6 +28,7 @@ const cardDataMap = (data) => [
   },
 ];
 
+// mapping api fields to custom headers for data in details page
 const detailsDataMap = (data) => [
   ...cardDataMap(data),
   {
